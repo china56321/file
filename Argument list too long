@@ -1,0 +1,2 @@
+ find choose_test_xml/ -name "*.xml" | xargs -i mv {} train-xml-ok/
+
