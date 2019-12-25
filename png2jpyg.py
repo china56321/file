@@ -23,7 +23,7 @@ def PNG_JPG(PngPath):
     except Exception as e:
         print("PNG转换JPG 错误", e)
 
-PNG = "/home/lifan/file/file/datasets/kitti/data_object_image_2/test/"
+PNG = "/home/fan/file/file/datasets/kitti/data_object_image_2/test/"
 f = os.listdir(PNG)
 n = 0
 for i in f:
