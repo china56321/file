@@ -1,0 +1,12 @@
+将python3设为默认,可以采用一下方式：
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7   1
+ 
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.5   2
+
+
+
+将python2设为默认,可以采用一下方式：
+ 
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.5   1
+
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7   2
