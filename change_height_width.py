@@ -40,5 +40,5 @@ def batch_xmlCompress(old_dirPath, new_dirPath):
 
 # 主函数    
 if __name__ == '__main__':
-    batch_xmlCompress('/home/lifan/share/make/darknet_self_mark/darknet/VOCdevkit/VOC2007/Annotations/', '/home/lifan/share/make/darknet_self_mark/darknet/VOCdevkit/VOC2007/b/')
+    batch_xmlCompress('/home/share/make/darknet_self_mark/darknet/VOCdevkit/VOC2007/Annotations/', '/home/share/make/darknet_self_mark/darknet/VOCdevkit/VOC2007/b/')
     print('all xml files have been compressed')
