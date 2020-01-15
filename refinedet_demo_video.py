@@ -86,14 +86,14 @@ if __name__ == '__main__':
         caffe.set_mode_gpu()
 
     # load labelmap
-    labelmap_file = '/home/lifan/share/make/RefineDet/data/VOCdevkit/labelmap_voc.prototxt'
+    labelmap_file = '/home/share/make/RefineDet/data/VOCdevkit/labelmap_voc.prototxt'
     file = open(labelmap_file, 'r')
     labelmap = caffe_pb2.LabelMap()
     text_format.Merge(str(file.read()), labelmap)
 
-    model_def = '/home/lifan/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/deploy.prototxt'
-    # model_weights ='/home/lifan/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_1140000.caffemodel'
-    model_weights ='/home/lifan/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_1368000.caffemodel'
+    model_def = '/home/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/deploy.prototxt'
+    # model_weights ='/home/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_1140000.caffemodel'
+    model_weights ='/home/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_1368000.caffemodel'
 
 
 
@@ -109,61 +109,10 @@ if __name__ == '__main__':
     transformer.set_raw_scale('data', 255)  # the reference model operates on images in [0,255] range instead of [0,1]
     transformer.set_channel_swap('data', (2, 1, 0))  # the reference model has channels in BGR order instead of RGB
     
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/192850AA.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/video/8.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/video/28.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/video/38.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/video/41.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/video/47.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/video/53.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/video/64.MP4'
 
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test0.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test1.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test2.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test3.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test4.MP4'
-
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test6.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test7.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test8.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test9.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test10.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test11.MP4'
-
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/person.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/person1.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/person2.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/person3.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/shade.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/shade1.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/shade2.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/shade3.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/light.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/tunnel.MP4'
-
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/192249AA.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/83.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/92.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/95.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/065159AA.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/065800AA.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/065900AA.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/172726AA.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/172926AA.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/180114AA.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/190149AA.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/garage4.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/garage3.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/garage2.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/garage1.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/garage.MP4'
-    input_dir = '/home/lifan/share/make/RefineDet/test/test/cell/2.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/cell/8.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/cell/38.MP4'
-    # input_dir = '/home/lifan/share/make/RefineDet/test/test/cell/47.MP4'
-
+    input_dir = '/home/share/make/RefineDet/test/test/cell/2.MP4'
+  
+    
     cap = cv2.VideoCapture(input_dir)  
 
     while cap.isOpened():
@@ -171,12 +120,9 @@ if __name__ == '__main__':
         if ret == True:
         # cv2.imshow('image', frame)  
 		# for im_name in im_names:
-        # image_file = '/home/lifan/share/make/RefineDet/examples/images/coco/' + im_name
-        # image_file = '/home/ambavm/RefineDet/examples/images/' + im_name
+        # image_file = '/home/share/make/RefineDet/examples/images/coco/' + im_name
+        # image_file = '/home/RefineDet/examples/images/' + im_name
           image = image/ 255.0
-          # transformed_image = transformer.preprocess('data', image).reshape(1,3,img_resize_width,img_resize_height)
-
-          # image = caffe.io.load_image(frame)
           transformed_image = transformer.preprocess('data', image)
           net.blobs['data'].data[...] = transformed_image
 
