@@ -51,5 +51,5 @@ def batch_xmlCompress(old_dirPath, new_dirPath):
 
 # 主函数    
 if __name__ == '__main__':
-    batch_xmlCompress('/home/lifan/test/pxml/', '/home/lifan/test/tested')
+    batch_xmlCompress('/home/test/pxml/', '/home/test/tested')
     print('all xml files have been compressed')
