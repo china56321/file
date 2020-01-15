@@ -8,7 +8,7 @@ class BatchRename():
 
     '''
     def __init__(self):
-        self.path = '/home/lifan/share/ML/160115000'  #路径 
+        self.path = '/home/share/ML/160115000'  #路径 
 
     def rename(self):
         filelist = os.listdir(self.path)
