@@ -4,8 +4,8 @@ import cv2
 import os
 
 fullfilename=[]
-filepath = "/home/lifan/delete/person/" #调整前图片的路径
-filepath1 = "/home/lifan/delete/image_resize"  #调整后图片的路径
+filepath = "/home/delete/person/" #调整前图片的路径
+filepath1 = "/home/delete/image_resize"  #调整后图片的路径
 
 for filename in os.listdir(filepath):
     print(filename)
