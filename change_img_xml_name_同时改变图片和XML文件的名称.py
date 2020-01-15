@@ -6,9 +6,9 @@ import xml.etree.ElementTree as ET
 import xml.dom.minidom
  
 i = 0
-xmldir = "/home/lifan/share/delete/Annotations"
-imgsdir = "/home/lifan/share/delete/JPEGImages"
-outdir = "/home/lifan/share/delete/save"
+xmldir = "/home/share/delete/Annotations"
+imgsdir = "/home/share/delete/JPEGImages"
+outdir = "/home/share/delete/save"
 for xmlfile in os.listdir(xmldir):
     xmlname = os.path.splitext(xmlfile)[0]
     for pngfile in os.listdir(imgsdir):
