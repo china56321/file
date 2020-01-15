@@ -114,7 +114,7 @@ if __name__ == '__main__':
     save_json_test = 'test.json'
 
     # 初始文件所在的路径
-    xml_dir = "/home/lifan/share/make/CenterNet/xml-to-json/Annotations"
+    xml_dir = "/home/share/make/CenterNet/xml-to-json/Annotations"
     xml_list = glob.glob(xml_dir + "/*.xml")
     xml_list = np.sort(xml_list)
 
