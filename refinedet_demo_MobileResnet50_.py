@@ -79,7 +79,7 @@ if __name__ == '__main__':
         caffe.set_mode_gpu()
 
     # load labelmap
-    labelmap_file = '/home/lifan/share/make/RefineDet/data/VOCdevkit/labelmap_voc.prototxt'
+    labelmap_file = '/home/share/make/RefineDet/data/VOCdevkit/labelmap_voc.prototxt'
     file = open(labelmap_file, 'r')
     labelmap = caffe_pb2.LabelMap()
     text_format.Merge(str(file.read()), labelmap)
@@ -87,9 +87,9 @@ if __name__ == '__main__':
     # load model VGGNet
   
 
-    model_def = '/home/lifan/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/deploy.prototxt'
-    # model_weights = '/home/lifan/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_1140000.caffemodel'
-    model_weights = '/home/lifan/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_1368000.caffemodel'
+    model_def = '/home/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/deploy.prototxt'
+    # model_weights = '/home/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_1140000.caffemodel'
+    model_weights = '/home/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_1368000.caffemodel'
 
 
     net = caffe.Net(model_def, model_weights, caffe.TEST)
@@ -107,7 +107,7 @@ if __name__ == '__main__':
     transformer.set_channel_swap('data', (2, 1, 0))  # the reference model has channels in BGR order instead of RGB
     
     a=0
-    im_names = os.listdir('/home/lifan/share/make/RefineDet/examples/images/')
+    im_names = os.listdir('/home/share/make/RefineDet/examples/images/')
     # im_names = ['0.jpg', '1.jpg', '2.jpg', '3.jpg']  
     for im_name in im_names:
         image_file = '/home/lifan/share/make/RefineDet/examples/images/' + im_name
