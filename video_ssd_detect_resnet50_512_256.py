@@ -9,11 +9,11 @@ import timeit
 #plt.rcParams['image.cmap'] = 'gray'
 
 # Make sure that caffe is on the python path:
-caffe_root = '/home/lifan/share/make/RefineDet'  # this file is expected to be in {caffe_root}/examples
+caffe_root = '/home/share/make/RefineDet'  # this file is expected to be in {caffe_root}/examples
 import os
 os.chdir(caffe_root)
 import sys
-sys.path.insert(0, '/home/lifan/share/make/RefineDet/python')
+sys.path.insert(0, '/home/share/make/RefineDet/python')
 
 
 import caffe
@@ -24,7 +24,7 @@ from google.protobuf import text_format
 from caffe.proto import caffe_pb2
 
 # load PASCAL VOC labels
-labelmap_file = '/home/lifan/share/make/RefineDet/data/VOCdevkit/labelmap_voc.prototxt'
+labelmap_file = '/home/share/make/RefineDet/data/VOCdevkit/labelmap_voc.prototxt'
 file = open(labelmap_file, 'r')
 labelmap = caffe_pb2.LabelMap()
 text_format.Merge(str(file.read()), labelmap)
@@ -45,9 +45,9 @@ def get_labelname(labelmap, labels):
     return labelnames
 
 
-model_def = '/home/lifan/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/deploy.prototxt'
-# model_weights = '/home/lifan/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_1368000.caffemodel'
-model_weights = '/home/lifan/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_1140000.caffemodel'
+model_def = '/home/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/deploy.prototxt'
+# model_weights = '/home/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_1368000.caffemodel'
+model_weights = '/home/share/make/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_1140000.caffemodel'
 
 net = caffe.Net(model_def,      # defines the structure of the model
                 model_weights,  # contains the trained weights
@@ -73,60 +73,8 @@ import os, sys
 import glob
 from PIL import Image
 
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/192850AA.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/video/8.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/video/28.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/video/38.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/video/41.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/video/47.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/video/53.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/video/64.MP4'
 
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test0.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test1.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test2.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test3.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test4.MP4'
-
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test6.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test7.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test8.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test9.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test10.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/test11.MP4'
-
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/person.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/person1.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/person2.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/person3.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/shade.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/shade1.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/shade2.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/shade3.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/light.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/tunnel.MP4'
-
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/192249AA.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/83.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/92.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/95.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/065159AA.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/065800AA.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/065900AA.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/172726AA.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/172926AA.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/180114AA.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/190149AA.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/garage4.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/garage3.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/garage2.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/garage1.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/test_video/garage.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/cell/2.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/cell/8.MP4'
-# input_dir = '/home/lifan/share/make/RefineDet/test/test/cell/38.MP4'
-input_dir = '/home/lifan/share/make/RefineDet/test/test/cell/47.MP4'
+input_dir = '/home/share/make/RefineDet/test/test/cell/47.MP4'
 
 
 
@@ -137,7 +85,7 @@ input_dir = '/home/lifan/share/make/RefineDet/test/test/cell/47.MP4'
 #    name=name.split('.')[0]
 #    #print name
 cap = cv2.VideoCapture(input_dir)
-#outputFile='/home/lifan/share/make/RefineDet/test/test/movie_saved/test.MP4'
+#outputFile='/home/share/make/RefineDet/test/test/movie_saved/test.MP4'
 #vid_writer = cv2.VideoWriter(outputFile, cv2.VideoWriter_fourcc('M','J','P','G'), 28, (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))))
 while cap.isOpened():
     ret, image1 = cap.read()
