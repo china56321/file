@@ -124,13 +124,13 @@ if __name__ == '__main__':
     #     caffe.set_mode_gpu()
 
     # load labelmap
-    labelmap_file = '/home/ambavm/RefineDet/data/VOCdevkit/VOC2007/labelmap_voc.prototxt'
+    labelmap_file = '/home/RefineDet/data/VOCdevkit/VOC2007/labelmap_voc.prototxt'
     file = open(labelmap_file, 'r')
     labelmap = caffe_pb2.LabelMap()
     text_format.Merge(str(file.read()), labelmap)
 
-    model_def = '/home/ambavm/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/deploy.prototxt'
-    model_weights = '/home/ambavm/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_350000.caffemodel'
+    model_def = '/home/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/deploy.prototxt'
+    model_weights = '/home/RefineDet/models/ResNet/coco/refinedet_resnet50_512x256/coco_refinedet_resnet50_512x256_iter_350000.caffemodel'
 
 
 
