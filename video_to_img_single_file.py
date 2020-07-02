@@ -1,4 +1,7 @@
  # -*- coding: utf-8 -*-
+ """ 
+ 该脚本用于将视频转换为图片。对每个视频文件新建一个文件夹，用于存放转换后的图片。
+ """
 import cv2
 from skimage import io
 import os
