@@ -93,7 +93,7 @@ def detect(save_img=False):
     img = torch.zeros((1, 3, imgsz, imgsz), device=device)  # init img
     _ = model(img.half() if half else img) if device.type != 'cpu' else None  # run once
     for path, img, im0s, vid_cap in dataset:
-        path='/home/lifan/share/make/yolov5/'+path   # The path of the images needed to be annotated.
+        path='/home/share/make/yolov5/'+path   # The path of the images needed to be annotated.
         if path == image_file:                  # if name of  path is equal to the name of the path of image_file .
           img = torch.from_numpy(img).to(device)
           img = img.half() if half else img.float()  # uint8 to fp16/32
@@ -200,9 +200,9 @@ if __name__ == '__main__':
     
     with torch.no_grad():
         a=0
-        im_names = os.listdir('/home/lifan/share/make/yolov5/inference/images/')   # The path of the images needed to be annotated.
+        im_names = os.listdir('/home/share/make/yolov5/inference/images/')   # The path of the images needed to be annotated.
         for label_name in im_names:
-           image_file = '/home/lifan/share/make/yolov5/inference/images/' + label_name
+           image_file = '/home/share/make/yolov5/inference/images/' + label_name
            image = cv2.imread(image_file) 
            img_size = image.shape
            height=img_size[0]
