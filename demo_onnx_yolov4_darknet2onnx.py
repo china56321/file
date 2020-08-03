@@ -46,6 +46,5 @@ def detect():
     plot_boxes_cv2(image_src, boxes[0], savename='predictions_onnx.jpg', class_names=class_names)
 
 
-
 if __name__ == '__main__':
     detect()
