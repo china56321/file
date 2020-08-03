@@ -2,10 +2,10 @@
 import argparse
 import os 
 import torch.backends.cudnn as cudnn
-
+from utils import torch_utils
 from utils import google_utils
 from utils.datasets import *
-from utils.utils import *
+from utils.general import *
 '''' 
 This sript is used to labeling the images and save the detected image in the output folder.
 Just need two steps .
@@ -93,7 +93,7 @@ def detect(save_img=False):
     img = torch.zeros((1, 3, imgsz, imgsz), device=device)  # init img
     _ = model(img.half() if half else img) if device.type != 'cpu' else None  # run once
     for path, img, im0s, vid_cap in dataset:
-        path='/home/share/make/yolov5/'+path   # The path of the images needed to be annotated.
+        #path='/home/share/make/yolov5/'+path   # The path of the images needed to be annotated.
         if path == image_file:                  # if name of  path is equal to the name of the path of image_file .
           img = torch.from_numpy(img).to(device)
           img = img.half() if half else img.float()  # uint8 to fp16/32
