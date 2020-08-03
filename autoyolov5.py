@@ -17,10 +17,10 @@ Second ,Change the path of image_file to be annotated.
 import argparse
 import os 
 import torch.backends.cudnn as cudnn
-
+from utils import torch_utils
 from utils import google_utils
 from utils.datasets import *
-from utils.utils import *
+from utils.general import *
 
 
 def plot_one_box(x, img, color=None, label=None, line_thickness=None):
@@ -103,7 +103,7 @@ def detect(save_img=False):
     _ = model(img.half() if half else img) if device.type != 'cpu' else None  # run once
     a=0
     for path, img, im0s, vid_cap in dataset:
-        path='/home/ambavm/make/yolov5/'+path   # The path of the images needed to be annotated.
+        #path='/home/ambavm/make/yolov5/'+path   # The path of the images needed to be annotated.
         image = cv2.imread(path) 
         img_size = image.shape
         height=img_size[0]
