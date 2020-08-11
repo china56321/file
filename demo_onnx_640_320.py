@@ -314,7 +314,6 @@ def display(detections=None, image_path=None, line_thickness=None, text_bg_alpha
     plt.imshow(image_src)
     plt.show()
 
-
 if __name__ == '__main__':
     matplotlib.use('TKAgg')
     plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
