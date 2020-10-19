@@ -1,0 +1,11 @@
+classes= 4 （修改成自己训练的种类数）
+
+train  = /home/user_name/darknet/data/train.txt   （修改成自己train.txt的路径）
+
+valid  = /home/user_name/darknet/data/2007_test.txt （评估测试的图片的路径，用于后面的评估测试）
+
+names = data/voc.names （修改成自己的类别名的路径）
+
+backup = backup（训练的权重所存放的路径）
+
+results = results （评估测试结果存放路径，也可以自己定义）

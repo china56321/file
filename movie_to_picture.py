@@ -21,3 +21,4 @@ while  flag: #循环读取视频帧
      c = c + 1
      cv2.waitKey(1)
 vc.release()
+

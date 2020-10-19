@@ -86,12 +86,11 @@ void *detect_in_thread(void *ptr)
 {
     running = 1;
     float nms = .4;
-
-    static int ticks = 0;  //add code
+    static int ticks = 0;
 
     layer l = net->layers[net->n-1];
     float *X = buff_letter[(buff_index+2)%3].data;
-    if((ticks%1) == 0)     //add code
+if((ticks%3) == 0)
     network_predict(net, X);
 
     /*
@@ -139,7 +138,7 @@ draw_detections(display, dets, nboxes, demo_thresh, demo_names, demo_alphabet, d
     
     free_detections(dets, nboxes);
 
-    ticks = (ticks+1)%(3*1024);
+	ticks = (ticks+1)%(3*1024);
     demo_index = (demo_index + 1)%demo_frame;
     running = 0;
     return 0;
